@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Python Related Posts",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita deleniti deserunt soluta, est ducimus sed voluptatibus porro ab qui architecto, maxime aspernatur ex nemo obcaecati voluptatem. Id praesentium, hic veritatis esse harum aspernatur dolorem eius ut aliquid. Quas dolorem voluptatibus iusto odio maiores. Obcaecati  ut? Explicabo nisi quibusdam corrupti, nobis consequuntur, tempore sed voluptates exercitationem expedita nam aut excepturi autem placeat vero, esse iure asperiores aspernatur facilis odit blanditiis fuga. Optio omnis consectetur quo nam dolor",
+      "tags": [
+        "django",
+        "flask",
+        "machine learning"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Related Posts",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita deleniti deserunt soluta, est ducimus sed voluptatibus porro ab qui architecto, maxime aspernatur ex nemo obcaecati voluptatem. Id praesentium, hic veritatis esse harum aspernatur dolorem eius ut aliquid. Quas dolorem voluptatibus iusto odio maiores. Obcaecati  ut? Explicabo nisi quibusdam corrupti, nobis consequuntur, tempore sed voluptates exercitationem expedita nam aut excepturi autem placeat vero, esse iure asperiores aspernatur facilis odit blanditiis fuga. Optio omnis consectetur quo nam dolor",
+      "tags": [
+        "css",
+        "html",
+        "bootstrap"
+      ]
+    },
+    {
+      "title": "Java",
+      "body": "This is java",
+      "tags": [
+        "spring",
+        "andorid",
+        "server"
+      ],
+      "id": 3
+    },
+    {
+      "title": "Django views",
+      "body": "This is the django views logic",
+      "tags": [
+        "urls",
+        "models",
+        "css"
+      ],
+      "id": 4
+    }
+  ]
+}

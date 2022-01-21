@@ -1,23 +1,45 @@
 <template>
   <div class="home">
-   <h1>Home</h1>
-  <PostList :posts="posts" />
+   <div v-if="error">
+     {{ error }}
+   </div>
+   <div v-if="posts.length" class="overlay">
+    <PostList :posts="posts" />
+    <TagCloud :posts="posts"/>
+   </div>
+   <div v-else>
+     <Spinner />
+   </div>
   </div>
 </template>
 
 <script>
 import PostList from '../components/PostList.vue'
-import { ref } from 'vue'
+import getPosts from '../composables/getPosts'
+import Spinner from '../components/Spinner.vue'
+import TagCloud from '../components/TagCloud.vue'
 export default {
   name: 'Home',
-  components: { PostList },
+  components: { PostList, Spinner, TagCloud },
   setup() {
-    const posts = ref([
-      {title: 'hello', body:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita deleniti deserunt soluta, est ducimus sed voluptatibus porro ab qui architecto, maxime aspernatur ex nemo obcaecati voluptatem. Id praesentium, hic veritatis esse harum aspernatur dolorem eius ut aliquid. Quas dolorem voluptatibus iusto odio maiores. Obcaecati  ut? Explicabo nisi quibusdam corrupti, nobis consequuntur, tempore sed voluptates exercitationem expedita nam aut excepturi autem placeat vero, esse iure asperiores aspernatur facilis odit blanditiis fuga. Optio omnis consectetur quo nam dolor.', id: 1},
-      {title: 'second hello', body:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita deleniti deserunt soluta, est ducimus sed voluptatibus porro ab qui architecto, maxime aspernatur ex nemo obcaecati voluptatem. Id praesentium, hic veritatis esse harum aspernatur dolorem eius ut aliquid. Quas dolorem voluptatibus iusto odio maiores. Obcaecati  ut? Explicabo nisi quibusdam corrupti, nobis consequuntur, tempore sed voluptates exercitationem expedita nam aut excepturi autem placeat vero, esse iure asperiores aspernatur facilis odit blanditiis fuga. Optio omnis consectetur quo nam dolor', id: 2},
-    ])
+      const { posts, error, load } = getPosts()
+      
+      load()
 
-    return { posts }
+    return { posts, error }
   }
 }
 </script>
+
+<style>
+  .home {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .overlay {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+  }
+</style>
